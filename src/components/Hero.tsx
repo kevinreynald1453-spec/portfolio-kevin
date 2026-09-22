@@ -10,7 +10,7 @@ export default function Hero() {
         mx-auto 
         px-5 
         md:px-10 
-        pt-[50px] 
+        pt-[20px] 
         pb-20 
         min-h-[calc(100vh-80px)]
         flex 

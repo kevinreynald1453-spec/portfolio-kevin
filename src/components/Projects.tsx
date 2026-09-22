@@ -298,67 +298,119 @@ export default function Projects() {
   const [dragging, setDragging] = useState(false);
 
   const isDown = useRef(false);
+
   const startX = useRef(0);
+
   const scrollLeft = useRef(0);
 
+  const moved = useRef(false);
 
-  const moveSlider = (direction: "left" | "right") => {
 
-    if (!scrollRef.current) return;
+  const moveSlider = (
+    direction:"left"|"right"
+    )=>{
+
+    if(!scrollRef.current)
+    return;
+
+
+    const cardWidth =
+    scrollRef.current.clientWidth * 0.9;
+
 
     scrollRef.current.scrollBy({
-      left: direction === "left" ? -900 : 900,
-      behavior: "smooth",
+
+    left:
+    direction==="left"
+    ?
+    -cardWidth
+    :
+    cardWidth,
+
+    behavior:"smooth"
+
     });
+
 
   };
 
 
-  const mouseDown = (e: React.MouseEvent) => {
+  const mouseDown = (
+    e: React.MouseEvent
+    )=>{
 
-    if (!scrollRef.current) return;
+    if(!scrollRef.current)
+    return;
+
 
     isDown.current = true;
 
+    moved.current = false;
+
     setDragging(true);
 
+
     startX.current =
-      e.pageX - scrollRef.current.offsetLeft;
+    e.pageX - scrollRef.current.offsetLeft;
+
 
     scrollLeft.current =
-      scrollRef.current.scrollLeft;
-
-  };
+    scrollRef.current.scrollLeft;
 
 
-  const mouseMove = (e: React.MouseEvent) => {
+    };
 
-    if (!isDown.current || !scrollRef.current)
-      return;
+
+
+  const mouseMove = (
+    e: React.MouseEvent
+    )=>{
+
+
+    if(
+    !isDown.current ||
+    !scrollRef.current
+    )
+    return;
 
 
     e.preventDefault();
 
 
+
     const x =
-      e.pageX - scrollRef.current.offsetLeft;
+    e.pageX - scrollRef.current.offsetLeft;
 
 
-    const walk =
-      (x - startX.current) * 1.2;
+    const distance =
+    x - startX.current;
+
+
+
+    if(Math.abs(distance) > 5){
+
+    moved.current = true;
+
+  }
+
 
 
     scrollRef.current.scrollLeft =
-      scrollLeft.current - walk;
-
-  };
+    scrollLeft.current - distance * 1.5;
 
 
-  const stopDrag = () => {
+
+    };
+
+
+
+  const stopDrag = ()=>{
+
 
     isDown.current = false;
 
     setDragging(false);
+
 
   };
 
@@ -369,11 +421,11 @@ export default function Projects() {
       id="projects"
       className="
         scroll-mt-5
-        max-w-[1200px]
+        max-w-[1020px]
         mx-auto
         px-5
         md:px-10
-        py-20
+        py-16 
       "
     >
 
@@ -488,18 +540,25 @@ export default function Projects() {
         onMouseUp={stopDrag}
         onMouseLeave={stopDrag}
         className={`
-          flex
-          gap-8
-          overflow-x-auto
-          snap-x
-          snap-mandatory
-          scroll-smooth
-          pb-5
-          pr-6
-          md:pr-[240px]
-          [&::-webkit-scrollbar]:hidden
+        flex
+        gap-5
+        overflow-x-auto
+        snap-x
+        snap-mandatory
+        scroll-smooth
+        overscroll-x-contain
+        touch-pan-x
+        pb-5
+        pr-6
+        md:pr-[240px]
+        [&::-webkit-scrollbar]:hidden
 
-          ${dragging ? "cursor-grabbing" : "cursor-grab"}
+        ${dragging 
+        ? 
+        "cursor-grabbing"
+        :
+        "cursor-grab"
+        }
         `}
       >
 
@@ -513,7 +572,7 @@ export default function Projects() {
                 snap-start
                 flex-shrink-0
                 w-[92vw]
-                md:w-[900px]
+                md:w-[820px]
                 bg-cell
                 border
                 border-border
@@ -536,7 +595,7 @@ export default function Projects() {
 
               <div
                 className="
-                  p-7
+                  p-6
                   flex
                   flex-col
                   h-full
@@ -560,7 +619,7 @@ export default function Projects() {
                 <h3
                   className="
                     font-serif
-                    text-2xl
+                    text-xl
                     font-semibold
                     mb-3
                   "
@@ -591,8 +650,8 @@ export default function Projects() {
                   className="
                     text-muted
                     leading-relaxed
-                    text-sm
-                    mb-6
+                    text-[13px]
+                    mb-5
                   "
                 >
                   {project.desc}
@@ -765,81 +824,91 @@ export default function Projects() {
               {/* RIGHT IMAGE FRAME — tanpa tinggi tetap, otomatis
                   mengikuti tinggi kolom teks di sebelahnya (grid row) */}
 
-              <div
-                className="
-                  relative
-                  bg-[#f8f9fb]
-                  border-t
-                  md:border-t-0
-                  md:border-l
-                  border-border
-                  flex
-                  items-center
-                  justify-center
-                  p-5
-                  md:p-6
-                  min-h-[260px]
-                "
-              >
-                <div
-                  className="
-                    relative
-                    w-full
-                    h-full
-                    rounded-lg
-                    border
-                    border-[#e3e6ee]
-                    bg-white
-                    shadow-[0_4px_14px_rgba(0,0,0,0.05)]
-                    overflow-hidden
-                    group
-                    flex
-                    flex-col
-                  "
-                >
-                  {project.frame === "browser" && (
-                    <div
-                      className="
-                        h-7
-                        flex
-                        items-center
-                        gap-1.5
-                        px-3
-                        border-b
-                        border-[#e3e6ee]
-                        bg-[#fafbfc]
-                        shrink-0
-                      "
-                    >
-                      <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f57]" />
-                      <span className="w-2.5 h-2.5 rounded-full bg-[#febc2e]" />
-                      <span className="w-2.5 h-2.5 rounded-full bg-[#28c840]" />
-                    </div>
-                  )}
+              {/* RIGHT IMAGE FRAME */}
 
-                  <div className="relative flex-1">
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      fill
-                      sizes="(max-width:768px) 100vw, 450px"
-                      quality={90}
-                      className="
-                        object-contain
-                        p-2
-                        transition-transform
-                        duration-300
-                        group-hover:scale-[1.02]
-                      "
-                    />
-                  </div>
-                </div>
+              <Link
+                href={project.links[0].url}
+
+                onClick={(e)=>{
+
+                if(moved.current){
+
+                e.preventDefault();
+
+                }
+
+                }}
+                className="
+                relative
+                bg-[#f8f9fb]
+                border-t
+                md:border-t-0
+                md:border-l
+                border-border
+                flex
+                items-center
+                justify-center
+                p-4
+                md:p-5
+                min-h-[230px]
+                cursor-pointer
+                group
+                hover:border-indigo
+                transition-all
+                duration-300
+                "
+                >
+
+
+                <div
+                className="
+                relative
+                w-full
+                h-full
+                rounded-lg
+                border
+                border-[#e3e6ee]
+                bg-white
+                shadow-[0_4px_14px_rgba(0,0,0,0.05)]
+                overflow-hidden
+                flex
+                items-center
+                justify-center
+                "
+                >
+
+
+                <Image
+
+                src={project.image}
+
+                alt={project.title}
+
+                fill
+
+                sizes="
+                (max-width:768px) 100vw,
+                500px
+                "
+
+                quality={90}
+
+                className="
+                object-contain
+                p-4
+                transition-transform
+                duration-300
+                group-hover:scale-[1.03]
+                "
+
+              />
+
+
               </div>
 
 
-
+              </Link>
             </div>
-
           ))
         }
 

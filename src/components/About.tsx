@@ -9,7 +9,7 @@ export default function About() {
       px-5
       md:px-10
       py-16
-      scroll-mt-28
+      scroll-mt-[70px]
       "
       id="about"
     >
