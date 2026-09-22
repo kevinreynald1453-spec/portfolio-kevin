@@ -20,7 +20,6 @@ const skillGroups = [
     skills: [
       "React",
       "Next.js",
-      "Flutter",
       "TensorFlow",
       "Keras",
       "Scikit-learn",
