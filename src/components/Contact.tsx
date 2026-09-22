@@ -6,7 +6,7 @@ export default function Contact() {
     <>
       <section className="max-w-[1020px] mx-auto px-5 md:px-10 py-16" id="contact">
         <div className="font-mono text-[13px] text-green mb-2">
-          In [7]: contact(me)
+          In [6]: contact(me)
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-[44px] items-start">

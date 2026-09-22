@@ -85,7 +85,7 @@ mb-2
 "
 >
 
-In [4]: print(skills)
+In [3]: print(skills)
 
 </div>
 

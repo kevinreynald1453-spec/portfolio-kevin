@@ -14,7 +14,7 @@ export default function About() {
       id="about"
     >
       <div className="font-mono text-[13px] text-green mb-2">
-        In [6]: about(me)
+        In [5]: about(me)
       </div>
       <h2 className="font-serif text-[34px] font-semibold tracking-[-0.5px] mb-9">
         Behind the <em className="italic text-indigo">notebook.</em>

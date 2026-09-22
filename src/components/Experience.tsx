@@ -14,7 +14,7 @@ export default function Experience() {
       id="experience"
     >
       <div className="font-mono text-[13px] text-green mb-2">
-        In [5]: load_history()
+        In [4]: load_history()
       </div>
       <h2 className="font-serif text-[34px] font-semibold tracking-[-0.5px] mb-9">
         Experience &amp; <em className="italic text-indigo">education.</em>
