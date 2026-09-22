@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --paper: #F7F8FA;
+    --cell: #FFFFFF;
+    --ink: #16181D;
+    --muted: #5C6470;
+    --grid: #E5E8ED;
+    --indigo: #032cb2;
+    --indigo-soft: #EEEEFB;
+    --green: #0E9F6E;
+    --green-soft: #E6F6F0;
+    --border: #D9DEE6;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--paper);
+    background-image: 
+      linear-gradient(var(--grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size: 28px 28px;
+    color: var(--ink);
+    line-height: 1.65;
+  }
+}
+
+@layer utilities {
+  .reveal {
+    @apply opacity-0 translate-y-[18px] transition-all duration-[600ms] ease-out;
+  }
+  .reveal.on {
+    @apply opacity-100 translate-y-0;
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .reveal {
+      @apply opacity-100 translate-y-0 transition-none;
+    }
+  }
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(
+      rgba(15,23,42,0.05) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(15,23,42,0.05) 1px,
+      transparent 1px
+    );
+
+  background-size: 32px 32px;
+}
