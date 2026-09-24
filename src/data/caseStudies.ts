@@ -377,7 +377,7 @@
         info: {
 
             type:
-            "Full-stack Project",
+            "Software Engineering",
 
             workMode:
             "Team Project",
@@ -517,7 +517,7 @@
         info: {
 
             type:
-            "Machine Learning Project",
+            "Machine Learning",
             
             workMode:
             "Team Project",
@@ -529,7 +529,7 @@
             "3 Members",
 
             timeline:
-            "2026",
+            "Feb 2026 - Jun 2026",
 
 
             stack:[
@@ -650,7 +650,7 @@
             "Individual Project",
 
             timeline:
-            "2026",
+            "Feb 2025 - Jun 2025",
 
 
             stack:[
