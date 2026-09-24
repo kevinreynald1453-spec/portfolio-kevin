@@ -10,7 +10,6 @@ const skillGroups = [
       "C#",
       "TypeScript",
       "JavaScript",
-      "Dart"
     ]
   },
 

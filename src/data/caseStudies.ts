@@ -50,7 +50,7 @@
     links: {
 
     paper:
-        "LINK_PAPER_KAMU",
+        "/Paper.pdf",
 
     youtube:
         "https://youtu.be/UYeDFE8JX98?si=g5rnXt3F2nR91cBM"

@@ -17,10 +17,10 @@ export default function Contact() {
             <p className="text-muted text-[17px] mb-5">
               Interested in my work or want to collaborate? <br />Feel free to reach out.
             </p>
-            <span className="font-mono text-[13.5px] text-indigo block mb-[18px]">kevinreynald14453@gmail.com</span>
+            <span className="font-mono text-[13.5px] text-indigo block mb-[18px]">kevinreynald1453@gmail.com</span>
             <div className="flex gap-[14px] font-mono text-[13px]">
-              <Link href="/" target="_blank" className="text-muted hover:text-indigo transition-colors">github</Link>
-              <Link href="/" target="_blank" className="text-muted hover:text-indigo transition-colors">linkedin</Link>
+              <Link href="https://github.com/KevinReynald029" target="_blank" className="text-muted hover:text-indigo transition-colors">github</Link>
+              <Link href="https://www.linkedin.com/in/kevin-reynald-242286327/" target="_blank" className="text-muted hover:text-indigo transition-colors">linkedin</Link>
               <Link href="https://huggingface.co/KevinRey" target="_blank" className="text-muted hover:text-indigo transition-colors">huggingface</Link>
             </div>
           </div>
