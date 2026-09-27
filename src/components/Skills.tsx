@@ -1,211 +1,94 @@
 import React from 'react';
 
-const skillGroups = [
+type SkillGroup = {
+  label: string;
+  color: 'indigo' | 'green';
+  skills: string[];
+};
+
+const skillGroups: SkillGroup[] = [
   {
-    title: "# programming_languages",
-    color: "text-green",
-    skills: [
-      "Python",
-      "C",
-      "C#",
-      "TypeScript",
-      "JavaScript",
-    ]
+    label: 'Programming Languages',
+    color: 'indigo',
+    skills: ['Python', 'C', 'C#', 'TypeScript', 'JavaScript', 'HTML', 'CSS'],
   },
-
   {
-    title: "# frameworks_libraries",
-    color: "text-indigo",
+    label: 'Frameworks & Libraries',
+    color: 'green',
     skills: [
-      "React",
-      "Next.js",
-      "TensorFlow",
-      "Keras",
-      "Scikit-learn",
-      "Node.js",
-      ".NET"
-    ]
+      'TensorFlow',
+      'Keras',
+      'Pandas',
+      'Numpy',
+      'Scikit-learn',
+      'PyTorch',
+      'OpenCV',
+      'React.js',
+      'Next.js',
+      'Node.js',
+      '.NET',
+    ],
   },
-
-
   {
-    title: "# ai_techniques",
-    color: "text-indigo",
+    label: 'AI Techniques',
+    color: 'indigo',
     skills: [
-      "Deep Learning",
-      "Computer Vision",
-      "Natural Language Processing",
-      "Transformers",
-      "Transfer Learning",
-      "CNN Architecture",
-      "Feature Fusion"
-    ]
+      'Machine Learning',
+      'Deep Learning',
+      'Computer Vision',
+      'Natural Language Processing',
+      'Model Deployment',
+      'Transfer Learning',
+      'CNN Architecture',
+      'Prompt Engineering',
+      'LLM Integration',
+      'Recommender Systems',
+    ],
   },
-
-
   {
-    title: "# tools_platforms",
-    color: "text-indigo",
-    skills: [
-      "Git",
-      "Firebase",
-      "HuggingFace",
-      "Streamlit",
-      "Vercel",
-      "REST API"
-    ]
-  }
+    label: 'Tools & Platforms',
+    color: 'green',
+    skills: ['Git', 'Figma', 'Azure DevOps', 'HuggingFace', 'Streamlit', 'Vercel'],
+  },
 ];
 
-
 export default function Skills() {
-
-return (
-
-<section
-className="
-scroll-mt-[90px]
-max-w-[1020px]
-mx-auto
-px-5
-md:px-10
-py-16
-"
-id="skills"
->
+  return (
+    <section
+      id="skills"
+      className="scroll-mt-[90px] max-w-[1020px] mx-auto px-5 md:px-10 py-16"
+    >
+      <div
+        className="font-mono text-[13px] text-green mb-2">
+        In [3]: print(skills)
+      </div>
 
 
-<div
-className="
-font-mono
-text-[13px]
-text-green
-mb-2
-"
->
+      <h2 className="font-serif text-[34px] font-semibold tracking-[-0.5px] mb-10">
+        What I <em className="italic text-indigo">work with.</em>
+      </h2>
 
-In [3]: print(skills)
-
-</div>
-
-
-
-<h2
-className="
-font-serif
-text-[34px]
-font-semibold
-tracking-[-0.5px]
-mb-9
-"
->
-
-What I <em className="italic text-indigo">
-work with.
-</em>
-
-</h2>
-
-
-
-
-<div
-className="
-grid
-grid-cols-1
-sm:grid-cols-2
-lg:grid-cols-4
-gap-4
-"
->
-
-
-{
-skillGroups.map(
-(group)=>(
-<div
-key={group.title}
-className="
-bg-cell
-border
-border-border
-rounded-[10px]
-p-[20px_22px]
-"
->
-
-
-<div
-className={`
-font-mono
-text-[12px]
-font-semibold
-${group.color}
-mb-3
-tracking-[0.5px]
-`}
->
-
-{group.title}
-
-</div>
-
-
-
-<div
-className="
-flex
-flex-wrap
-gap-[7px]
-"
->
-
-
-{
-group.skills.map(
-(skill)=>(
-
-<span
-key={skill}
-className="
-font-mono
-text-[11px]
-text-muted
-bg-paper
-border
-border-border
-rounded-full
-px-[11px]
-py-[3px]
-"
->
-
-{skill}
-
-</span>
-
-)
-)
-
-}
-
-
-</div>
-
-
-</div>
-
-)
-)
-
-}
-
-
-</div>
-
-
-</section>
-
-);
-
+      <div className="flex flex-col gap-3">
+        {skillGroups.map((group) => (
+          <div
+            key={group.label}
+            className={`grid grid-cols-1 md:grid-cols-[220px_1fr] gap-x-8 gap-y-2 py-6 pl-6 pr-5 rounded-[8px] bg-paper border border-border border-l-[3px] ${
+              group.color === 'indigo' ? 'border-l-indigo' : 'border-l-green'
+            }`}
+          >
+            <h3
+              className={`text-[15px] font-semibold ${
+                group.color === 'indigo' ? 'text-indigo' : 'text-green'
+              }`}
+            >
+              {group.label}
+            </h3>
+            <p className="text-[15px] text-muted leading-relaxed">
+              {group.skills.join(', ')}
+            </p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
 }
