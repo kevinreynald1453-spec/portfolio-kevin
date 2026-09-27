@@ -58,6 +58,7 @@ export default function Skills() {
       id="skills"
       className="scroll-mt-[40px] max-w-[1020px] mx-auto px-5 md:px-10 py-16"
     >
+
       <div
         className="font-mono text-[13px] text-green mb-2">
         In [3]: print(skills)
