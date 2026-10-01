@@ -22,7 +22,7 @@
         "Team Project",
 
     role:
-        "AI Engineer",
+        "Machine Learning Engineer",
 
     team:
         "3 Members",
@@ -294,7 +294,7 @@
         type: "Natural Language Processing",
         workMode:
         "Team Project",
-        role: "AI Engineer",
+        role: "NLP Engineer",
         team: "3 Members",
         timeline: "Feb 2026 - Jun 2026",
         stack: [
@@ -759,8 +759,8 @@
     export const projectOrder = [
     "fruit-freshness",
     "financial-sentiment",
-    "nusatrip",
     "gymbot",
+    "nusatrip",
     "mind-sense",
     "mr-coffee",
     ];
