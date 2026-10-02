@@ -420,19 +420,19 @@ export default function Projects() {
     <section
       id="projects"
       className="
-        scroll-mt-5
+        scroll-mt-20
         max-w-[1020px]
         mx-auto
         px-5
         md:px-10
-        py-16 
+        py-3
       "
     >
 
 
       {/* HEADER */}
 
-      <div className="flex justify-between items-end mb-8">
+      <div className="flex justify-between items-end mb-5">
 
 
         <div>
@@ -442,7 +442,7 @@ export default function Projects() {
               font-mono
               text-green
               text-[13px]
-              mb-2
+              mb-1.5
             "
           >
             In [2]: load_projects()
@@ -452,7 +452,7 @@ export default function Projects() {
           <h2
             className="
               font-serif
-              text-[38px]
+              text-[30px]
               font-semibold
             "
           >
@@ -467,8 +467,8 @@ export default function Projects() {
             className="
               font-mono
               text-muted
-              text-sm
-              mt-2
+              text-xs
+              mt-1.5
             "
           >
             A collection of AI systems and software projects.
@@ -572,7 +572,7 @@ export default function Projects() {
                 snap-start
                 flex-shrink-0
                 w-[92vw]
-                md:w-[820px]
+                md:w-[800px]
                 bg-cell
                 border
                 border-border
@@ -608,7 +608,7 @@ export default function Projects() {
                     font-mono
                     text-green
                     text-sm
-                    mb-2
+                    mb-1.5
                   "
                 >
                   Out[{index + 1}]: {project.id}
@@ -621,7 +621,7 @@ export default function Projects() {
                     font-serif
                     text-xl
                     font-semibold
-                    mb-3
+                    mb-2.5
                   "
                 >
                   {project.title}
@@ -637,7 +637,7 @@ export default function Projects() {
                     px-3
                     py-1
                     rounded-full
-                    mb-4
+                    mb-3
                     ${badgeStyles[project.badge] ?? defaultBadgeStyle}
                   `}
                 >
@@ -651,7 +651,8 @@ export default function Projects() {
                     text-muted
                     leading-relaxed
                     text-[13px]
-                    mb-5
+                    mb-4
+                    line-clamp-3
                   "
                 >
                   {project.desc}
@@ -666,8 +667,8 @@ export default function Projects() {
                   className="
                     flex
                     flex-wrap
-                    gap-3
-                    mb-5
+                    gap-2.5
+                    mb-4
                   "
                 >
 
@@ -681,8 +682,8 @@ export default function Projects() {
                           border-border
                           bg-paper
                           rounded-lg
-                          px-4
-                          py-2
+                          px-3
+                          py-1.5
                         "
                       >
 
@@ -691,6 +692,7 @@ export default function Projects() {
                             font-mono
                             text-indigo
                             font-semibold
+                            text-base
                           "
                         >
                           {metric.value}
@@ -725,12 +727,12 @@ export default function Projects() {
                     flex
                     flex-wrap
                     gap-2
-                    mb-6
+                    mb-4
                   "
                 >
 
                   {
-                    project.tags.map((tag, i) => (
+                    project.tags.slice(0, 5).map((tag, i) => (
 
                       <span
                         key={i}
@@ -740,7 +742,7 @@ export default function Projects() {
                           border
                           border-border
                           rounded-full
-                          px-3
+                          px-2.5
                           py-1
                         "
                       >
@@ -748,6 +750,22 @@ export default function Projects() {
                       </span>
 
                     ))
+                  }
+
+                  {
+                    project.tags.length > 5 && (
+                      <span
+                        className="
+                          font-mono
+                          text-xs
+                          text-muted
+                          px-2.5
+                          py-1
+                        "
+                      >
+                        +{project.tags.length - 5}
+                      </span>
+                    )
                   }
 
                 </div>
@@ -765,10 +783,10 @@ export default function Projects() {
                   flex
                   flex-wrap
                   items-center
-                  gap-x-5
-                  gap-y-2
+                  gap-x-4
+                  gap-y-1.5
                   mt-auto
-                  pt-2
+                  pt-1
                   whitespace-nowrap
                   "
                 >
@@ -848,9 +866,9 @@ export default function Projects() {
                 flex
                 items-center
                 justify-center
-                p-4
-                md:p-5
-                min-h-[230px]
+                p-3
+                md:p-4
+                min-h-[220px]
                 cursor-pointer
                 group
                 hover:border-indigo
@@ -895,7 +913,7 @@ export default function Projects() {
 
                 className="
                 object-contain
-                p-4
+                p-3
                 transition-transform
                 duration-300
                 group-hover:scale-[1.03]

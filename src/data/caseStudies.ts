@@ -247,20 +247,7 @@
         implementation:
         `
         The application workflow:
-
-        User Interaction
-        ↓
-        Frontend Chat Interface
-        ↓
-        REST API Request
-        ↓
-        Backend Processing
-        ↓
-        Gemini API Integration
-        ↓
-        AI Generated Response
-        ↓
-        Personalized Fitness Recommendation
+        User Interaction -> Frontend Chat Interface -> REST API Request -> Backend Processing -> Gemini API Integration -> AI Generated Response -> Personalized Fitness Recommendation
         `,
 
 

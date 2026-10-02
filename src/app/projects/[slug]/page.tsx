@@ -185,7 +185,8 @@ max-w-[1400px]
 mx-auto
 px-5
 md:px-16
-py-16
+pt-8
+pb-16
 "
 >
 
@@ -198,7 +199,7 @@ className="
 font-mono
 text-green
 text-[13px]
-mb-5
+mb-3
 "
 >
 
@@ -218,11 +219,11 @@ load_case_study(project="{slug}")
 className="
 font-serif
 text-[42px]
-md:text-[50px]
+md:text-[40px]
 font-semibold
 tracking-[-1.5px]
 leading-tight
-mb-4
+mb-3
 "
 >
 
@@ -258,7 +259,7 @@ border
 border-border
 rounded-xl
 p-7
-mb-8
+mb-5
 shadow-sm
 "
 >
@@ -544,11 +545,27 @@ p-6
 {/* CONTENT */}
 
 
+<div
+className="
+space-y-6
+"
+>
+
+
+<div
+className="
+grid
+grid-cols-1
+lg:grid-cols-2
+gap-6
+items-start
+"
+>
+
 <TextSection
 title="About The Project"
 text={project.about}
 />
-
 
 
 <ListSection
@@ -556,7 +573,18 @@ title="Key Highlights"
 items={project.highlights}
 />
 
+</div>
 
+
+
+<div
+className="
+grid
+grid-cols-1
+lg:grid-cols-2
+gap-6
+"
+>
 
 <ListSection
 title="My Contribution"
@@ -564,32 +592,42 @@ items={project.contribution}
 />
 
 
+<TextSection
+title="What I Learned"
+text={project.learned}
+/>
+
+</div>
+
+
+
+<div
+className="
+grid
+grid-cols-1
+lg:grid-cols-2
+gap-6
+"
+>
 
 <TextSection
 title="Design Thinking & Approach"
 text={project.designThinking}
 />
 
-
-
 <TextSection
 title="Technical Implementation"
 text={project.implementation}
 />
 
-
+</div>
 
 <ListSection
 title="Results"
 items={project.results}
 />
 
-
-
-<TextSection
-title="What I Learned"
-text={project.learned}
-/>
+</div>
 
 
 
@@ -945,212 +983,127 @@ duration-200
 
 
 function TextSection({
+  title,
+  text,
+}: {
+  title: string;
+  text: string;
+}) {
+  return (
+    <section
+      className="
+        bg-cell
+        border
+        border-border
+        rounded-xl
+        p-5
+        md:p-6
+        h-fit
+      "
+    >
+      <h2
+        className="
+          font-serif
+          text-[20px]
+          md:text-[22px]
+          font-semibold
+          tracking-[-0.3px]
+          mb-3
+        "
+      >
+        {title}
+      </h2>
 
-title,
-
-text
-
-}:{
-
-title:string;
-
-text:string;
-
-}){
-
-
-return(
-
-<section
-className="
-bg-cell
-border
-border-border
-rounded-xl
-p-6
-md:p-8
-mb-6
-"
->
-
-
-<h2
-className="
-font-serif
-text-[30px]
-md:text-[34px]
-font-semibold
-mb-1
-"
->
-
-{title}
-
-</h2>
-
-
-
-<p
-className="
-w-full
-text-muted
-text-[18px]
-leading-[1.7]
-whitespace-pre-line
-tracking-normal
-"
->
-
-{text}
-
-</p>
-
-
-</section>
-
-)
-
+      <p
+        className="
+          w-full
+          text-muted
+          text-[14px]
+          leading-[1.75]
+          whitespace-pre-line
+          tracking-normal
+        "
+      >
+        {text}
+      </p>
+    </section>
+  );
 }
-
-
-
-
 
 
 
 
 function ListSection({
+  title,
+  items,
+}: {
+  title: string;
+  items: string[];
+}) {
+  return (
+    <section
+      className="
+        bg-cell
+        border
+        border-border
+        rounded-xl
+        p-5
+        md:p-6
+        h-fit
+      "
+    >
+      <h2
+        className="
+          font-serif
+          text-[20px]
+          md:text-[22px]
+          font-semibold
+          tracking-[-0.3px]
+          mb-4
+        "
+      >
+        {title}
+      </h2>
 
-title,
-
-items
-
-}:{
-
-title:string;
-
-items:string[];
-
-}){
-
-
-return(
-
-<section
-className="
-bg-cell
-border
-border-border
-rounded-xl
-p-8
-md:p-10
-mb-8
-"
->
-
-
-
-<h2
-className="
-font-serif
-text-[30px]
-md:text-[34px]
-font-semibold
-mb-8
-"
->
-
-{title}
-
-</h2>
-
-
-
-
-<div
-className="
-grid
-grid-cols-1
-md:grid-cols-2
-gap-5
-"
->
-
-
-{
-
-items.map(
-
-(item)=>(
-
-
-<div
-
-key={item}
-
-className="
-border
-border-border
-rounded-lg
-p-5
-bg-paper
-transition-colors
-hover:border-indigo
-"
-
->
-
-
-<div
-className="
-flex
-gap-3
-text-muted
-leading-relaxed
-text-[15px]
-"
->
-
-
-<span
-className="
-text-indigo
-font-bold
-"
->
-
-✓
-
-</span>
-
-
-<p>
-
-{item}
-
-</p>
-
-
-</div>
-
-
-</div>
-
-
-
-)
-
-)
-
-}
-
-
-</div>
-
-
-
-</section>
-
-)
-
+      <div
+        className="
+          grid
+          grid-cols-1
+          md:grid-cols-2
+          gap-3
+        "
+      >
+        {items.map((item) => (
+          <div
+            key={item}
+            className="
+              border
+              border-border
+              rounded-lg
+              px-3.5
+              py-3
+              bg-paper
+              transition-colors
+              hover:border-indigo
+            "
+          >
+            <div
+              className="
+                flex
+                gap-2.5
+                text-muted
+                leading-[1.6]
+                text-[13px]
+              "
+            >
+              <span className="text-indigo font-bold text-[13px] shrink-0">
+                ✓
+              </span>
+              <p>{item}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
 }
