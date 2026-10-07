@@ -12,10 +12,10 @@ export default function Contact() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-[44px] items-start">
           <div>
             <h2 className="font-serif text-[36px] font-semibold leading-[1.15] mb-3.5">
-              Let's connect.
+              Have an opportunity?
             </h2>
             <p className="text-muted text-[17px] mb-5">
-              Interested in my work or want to collaborate? <br />Feel free to reach out.
+              I’m currently looking for internship opportunities in AI or Software <br />Let’s connect and see what we can build together.
             </p>
             <span className="font-mono text-[13.5px] text-indigo block mb-[18px]">kevinreynald1453@gmail.com</span>
             <div className="flex gap-[14px] font-mono text-[13px]">
