@@ -744,10 +744,10 @@
     };
 
     export const projectOrder = [
-    "fruit-freshness",
-    "financial-sentiment",
-    "gymbot",
-    "nusatrip",
-    "mind-sense",
-    "mr-coffee",
+        "fruit-freshness",
+        "financial-sentiment",
+        "nusatrip",
+        "gymbot",
+        "mind-sense",
+        "mr-coffee",
     ];
