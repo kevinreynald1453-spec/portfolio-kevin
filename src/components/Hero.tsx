@@ -45,7 +45,7 @@ export default function Hero() {
       <h1
         className="
           font-serif 
-          text-[clamp(38px,5.5vw,68px)]
+          text-[clamp(30px,5.5vw,45px)]
           font-semibold 
           leading-[1.05]
           tracking-[-1.5px]
@@ -55,11 +55,11 @@ export default function Hero() {
           max-w-[900px]
         "
       >
-        I train models —
+        Building intelligent software —
         <br />
-        then I{" "}
+        from models to{" "}
         <em className="italic text-indigo">
-          ship them.
+          real-world apps.
         </em>
       </h1>
 
@@ -67,8 +67,8 @@ export default function Hero() {
       {/* Description */}
       <p
         className="
-          text-[16px]
-          md:text-[19px]
+          text-[14px]
+          md:text-[18px]
           text-muted
           mb-5
           max-w-[780px]
@@ -79,16 +79,16 @@ export default function Hero() {
           Turning intelligent systems into real-world software.
         </b>{" "}
         Computer Science student specializing in Intelligent Systems.
-        I build AI models, develop applications, and bridge the gap
-        between research and production.
+        I write production code for web applications and build AI models that make them smarter,
+        from training to deployment.
       </p>
 
 
       {/* Identity */}
       <p
         className="
-          text-[14px]
-          md:text-[15px]
+          text-[12px]
+          md:text-[13px]
           text-muted
           mb-10
           max-w-[700px]
